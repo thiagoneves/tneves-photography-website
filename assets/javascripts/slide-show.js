@@ -22,14 +22,13 @@ var cbpBGSlideshow = (function() {
 
 				$items.each( function() {
 					var $item = $( this );
-					$item.css( "background-image", "url(" + $item.find( "img" ).attr( "src" ) + ")" );
 					$item.css( "background-position", $item.find( "img" ).data( "focus" ) );
+					$item.css( "background-image", "url(" + $item.find( "img" ).attr( "src" ) + ")" );
 				});
 
 			} else {
 				$slideshow.find( "img" ).show();
 			}
-
 			// show first item
 			$items.eq( current ).css( "opacity", 1 );
 

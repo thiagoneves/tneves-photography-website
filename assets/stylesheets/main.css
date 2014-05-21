@@ -15,6 +15,7 @@ body {
     position: fixed;
     bottom: 0;
     transition: height 0.4s;
+    z-index: 10;
 }
 
 #header-wrapper.up {
@@ -86,13 +87,13 @@ body {
 }
 
 #social {
-    padding: 13px 0px 10px 40px;
     display: inline-block;
     vertical-align: middle;
+    border-right: 1px solid #dedede;
+    padding: 10px 0;
     margin: 0;
-
 }
-
+ 
 #social li {
     display: inline-block;
     margin-right: 25px;
@@ -103,14 +104,16 @@ body {
     color: #a1a1a1;
 }
 
-#social li a:hover {
+#social li a:hover, .btn-page-content:hover {
     color: #333;
 }
 
 .btn-page-content {
-    width: 80px;
-    height: 48px;
+    width: 64px;
+    font-size: 22px;
+    color: #a1a1a1;
+    text-decoration: none;
     display: inline-block;
-    vertical-align: middle;
-    border-left: 1px solid #dedede;
+    vertical-align: -5px;
+    text-align: center;
 }
