@@ -1,4 +1,4 @@
-var cbpBGSlideshow = (function() {
+var slideShow = (function() {
 
 	var $slideshow = $("#cbp-bislideshow"),
 		$items = $slideshow.children("li"), itemsCount = $items.length,
@@ -15,24 +15,20 @@ var cbpBGSlideshow = (function() {
 			hideControls();
 		}
 
-		// preload the images
 		$slideshow.imagesLoaded( function() {
 
-			if( Modernizr.backgroundsize ) {
-
+			if(Modernizr.backgroundsize) {
 				$items.each( function() {
-					var $item = $( this );
-					$item.css( "background-position", $item.find( "img" ).data( "focus" ) );
-					$item.css( "background-image", "url(" + $item.find( "img" ).attr( "src" ) + ")" );
+					var $item = $(this);
+					$item.css("background-position", $item.find( "img" ).data("focus"));
+					$item.css("background-image", "url(" + $item.find( "img" ).attr( "src" ) + ")");
 				});
-
 			} else {
-				$slideshow.find( "img" ).show();
+				$slideshow.find("img").show();
 			}
-			// show first item
-			$items.eq( current ).css( "opacity", 1 );
+			
+			$items.eq(current).css("opacity", 1);
 
-			// initialize/bind the events
 			initEvents();
 
 		});
@@ -63,7 +59,6 @@ var cbpBGSlideshow = (function() {
 
 	function navigate( direction ) {
 
-		// current item
 		var $oldItem = $items.eq( current );
 
 		if( direction === "next" ) {
@@ -72,12 +67,10 @@ var cbpBGSlideshow = (function() {
 			current = current > 0 ? --current : itemsCount - 1;
 		}
 
-		// new item
 		var $newItem = $items.eq( current );
 
-		// show / hide items
-		$oldItem.css( "opacity", 0 );
-		$newItem.css( "opacity", 1 );
+		$oldItem.css("opacity", 0);
+		$newItem.css("opacity", 1);
 
 	}
 
@@ -86,6 +79,8 @@ var cbpBGSlideshow = (function() {
 		navigation.$navNext.hide();
 	}
 
-	return { init : init };
+	return { 
+		init : init 
+	};
 
 })();

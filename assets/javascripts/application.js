@@ -5,6 +5,6 @@ $(function() {
     $("#header-wrapper").toggleClass("up");
   });
 
-  cbpBGSlideshow.init();
+  slideShow.init();
 
 });

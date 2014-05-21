@@ -117,3 +117,17 @@ body {
     vertical-align: -5px;
     text-align: center;
 }
+
+.image-grid > div {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    text-align: center;
+    margin: 20px; 
+}
+
+.image-grid img {
+    max-width: 200px;
+    max-height: 200px;
+    vertical-align: middle;
+}

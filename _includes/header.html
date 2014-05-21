@@ -28,16 +28,14 @@
 
   </header>
 
-  <section>
-    <ul>
+  <section class="image-grid">
       {% for image in site.data.images %}
         {% if (page.category contains image.category) or (page.category == 'highlight' and image.highlight) %}
-          <div style="width: 300px; height: 200px; float: left; margin-right: 20px; background-color: #000">
-
+          <div style="image">
+            <img src="/assets/images/{{ image.name }}" alt="{{ image.title }}" data-focus="{{ image.focal-point }}"/>
           </div>
         {% endif %}
       {% endfor %}
-    </ul>
   </section>
 
 </div>
