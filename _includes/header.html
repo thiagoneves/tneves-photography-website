@@ -1,0 +1,43 @@
+<div id="header-wrapper">
+
+  <header>
+
+    <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+    <nav>
+
+      <ul>
+        {% for page in site.pages %}
+          <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+        {% endfor %}
+      </ul>
+
+    </nav>
+
+    <div id="right-container">
+
+      <ul id="social" class="fa-ul">
+          <li><a href="http://www.facebook.com/thiagohneves" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="http://www.instagram.com/thiagohneves" title=""><i class="fa fa-instagram"></i></a></li>
+          <li><a href="http://www.twitter.com/thiagohneves" title=""><i class="fa fa-twitter"></i></a></li>
+      </ul>
+
+      <a class="btn-page-content" href="#"></a>
+
+    <div>
+
+  </header>
+
+  <section>
+    <ul>
+      {% for image in site.data.images %}
+        {% if (page.category contains image.category) or (page.category == 'highlight' and image.highlight) %}
+          <div style="width: 300px; height: 200px; float: left; margin-right: 20px; background-color: #000">
+
+          </div>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+
+</div>

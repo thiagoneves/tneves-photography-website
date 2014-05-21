@@ -1,0 +1,33 @@
+- name: 1.jpg
+  category: portrait
+  highlight: true
+  focal-point: 80% center
+
+- name: 2.jpg
+  category: portrait
+  highlight: false
+  focal-point: center center
+
+
+- name: 3.jpg
+  category: portrait
+  highlight: false
+  focal-point: 20% center
+
+
+- name: 4.jpg
+  category: portrait
+  highlight: false
+  focal-point: top center
+
+
+- name: 5.jpg
+  category: landscape
+  highlight: false
+  focal-point: center center
+
+
+- name: 6.jpg
+  category: landscape
+  highlight: false
+  focal-point: center center

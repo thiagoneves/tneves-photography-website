@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+    <body>
+
+    {% include header.html %}
+
+    <div class="main">
+
+      <ul id="cbp-bislideshow" class="cbp-bislideshow">
+        {% for image in site.data.images %}
+          {% if (page.category contains image.category) or (page.category == 'highlight' and image.highlight) %}
+            <li><img src="/assets/images/{{ image.name }}" alt="{{ image.title }}" data-focus="{{ image.focal-point }}"/></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <div id="cbp-bicontrols" class="cbp-bicontrols">
+        <span class="cbp-biprev"></span>
+        <span class="cbp-binext"></span>
+      </div>
+
+    </div>
+
+    {% include footer.html %}
+
+    </body>
+
+</html>
