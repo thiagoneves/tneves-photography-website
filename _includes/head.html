@@ -15,12 +15,17 @@
       <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"/>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ site.baseurl }}assets/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/{{ site.baseurl }}assets/favicon.ico" type="image/x-icon" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300"  type="text/css">
-    <link rel="stylesheet" href="/{{ site.css_folder }}/font-awesome.css">
-    <link rel="stylesheet" href="/{{ site.css_folder }}/component.css">
-    <link rel="stylesheet" href="/{{ site.css_folder }}/main.css">
 
+    {% if site.env == "production" %}
+      <link rel="stylesheet" href="/{{ site.css_folder }}/style.min.css">
+    {% else %}
+      <link rel="stylesheet" href="/{{ site.css_folder }}/font-awesome.css">
+      <link rel="stylesheet" href="/{{ site.css_folder }}/component.css">
+      <link rel="stylesheet" href="/{{ site.css_folder }}/main.css">
+    {% endif %}
+    
 </head>
