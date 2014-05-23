@@ -27,5 +27,6 @@ s3_reduced_redundancy: true
 exclude_from_upload:
   - node_modules/
   - package.json
+  - s3_website.yml
   - Gruntfile.js
   - README.md
