@@ -1,11 +1,9 @@
-baseurl: "localhost:4000/"
+baseurl: ""
 url: "http://www.thiagonevesfotografia.com.br"
 
 title: Thiago Neves | Fotografia
 email: thiagohneves@gmail.com
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
-
-google-analytics-tracking-id:
+description: ""
 
 source:      .
 destination: ./_site

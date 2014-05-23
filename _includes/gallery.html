@@ -1,0 +1,16 @@
+<div id="gallery">
+
+  <ul id="cbp-bislideshow" class="cbp-bislideshow">
+    {% for image in site.data.images %}
+      {% if (page.category contains image.category) or (page.category == 'highlight' and image.highlight) %}
+        <li><img src="/assets/images/{{ image.name }}" alt="{{ image.title }}" data-focus="{{ image.focal-point }}"/></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div id="cbp-bicontrols" class="cbp-bicontrols">
+    <span class="cbp-biprev fa fa-angle-left"></span>
+    <span class="cbp-binext fa fa-angle-right"></span>
+  </div>
+
+</div>
