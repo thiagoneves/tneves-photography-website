@@ -1,4 +1,4 @@
-var slideShow = (function() {
+var SlideShow = (function() {
 
 	var $slideshow = $("#cbp-bislideshow"),
 		$items = $slideshow.children("li"), itemsCount = $items.length,
@@ -57,7 +57,7 @@ var slideShow = (function() {
 
 	}
 
-	function navigate( direction ) {
+	function navigate(direction) {
 
 		var $oldItem = $items.eq( current );
 
@@ -74,13 +74,20 @@ var slideShow = (function() {
 
 	}
 
+	function showImage(position){
+		$items.eq(current).css("opacity", 0);
+		$items.eq(position).css("opacity", 1);
+		current = position;
+	}
+
 	function hideControls(){
 		navigation.$navPrev.hide();
 		navigation.$navNext.hide();
 	}
 
 	return { 
-		init : init 
+		init : init,
+		showImage : showImage
 	};
 
 })();

@@ -100,6 +100,8 @@ body {
 }
 
 #social li a {
+    text-decoration: none;
+    vertical-align: middle;
     font-size: 20px;
     color: #a1a1a1;
 }
@@ -118,7 +120,7 @@ body {
     text-align: center;
 }
 
-.image-grid > div {
+.image-grid > a {
     width: 200px;
     height: 200px;
     display: inline-block;
