@@ -145,7 +145,7 @@ body {
     box-shadow: 0 0 5px #a1a1a1;
 }
 
-#left-container > span {
+#left-container > a.menu-mobile {
     display: inline-block;
     margin-top: 12px;
     margin-left: 20px;
@@ -153,14 +153,16 @@ body {
 
 @media only screen and (min-width : 320px) and (max-width : 568px) {
 
-    #left-container a {
+    #left-container > a.menu-mobile {
         display: inline-block;
         padding-left: 0;
+        margin-top: 0;
     }
 
-    #left-container > span:before {
+    #left-container > a.menu-mobile:before {
         content: "\f0c9";
         font-size: 25px;
+
         margin-right: 10px;
         vertical-align: -3px;
     }

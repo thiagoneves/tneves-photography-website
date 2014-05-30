@@ -2,15 +2,27 @@
 
   <header>
 
-    <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <div id="left-container">
+      
+      <a href="#" class="menu-mobile fa"></a>
 
-    <nav>
-      <ul>
-        {% for page in site.pages %}
-          <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
+      <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+      <nav>
+        <ul>
+          {% for page in site.pages %}
+            <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+          {% endfor %}
+
+          <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">Casamentos</a></li>
+          <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">Crianças</a></li>
+          <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">Editorial</a></li>
+          <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">Sobre mim</a></li>
+          
+        </ul>
+
+      </nav>
+    </div>
 
     <div id="right-container">
 
