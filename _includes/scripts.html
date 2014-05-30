@@ -1,7 +1,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 {% if site.env == "production" %}
-  <script src="/{{ site.js_folder }}/app.js"></script>
+  <script src="/{{ site.js_folder }}/app.min.js"></script>
 {% else %}
   <script src="/{{ site.js_folder }}/jquery.imagesloaded.min.js"></script>
   <script src="/{{ site.js_folder }}/modernizr.custom.js"></script>
@@ -18,5 +18,4 @@
 
   ga("create", "UA-51280113-1", "thiagonevesfotografia.com.br");
   ga("send", "pageview");
-
 </script>

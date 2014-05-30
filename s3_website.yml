@@ -1,6 +1,6 @@
 s3_id: <%= ENV["AWS_ID"] %>
 s3_secret: <%= ENV["AWS_SECRET"] %>
-s3_bucket: thiagonevesfotografia.com.br
+s3_bucket: www.thiagonevesfotografia.com.br
 
 max_age:
   "assets/*": 6000

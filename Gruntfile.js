@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
 
+	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-cssmin");
 	grunt.loadNpmTasks("grunt-contrib-clean");
@@ -10,17 +11,26 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 
+		concat: {
+        js:{
+            src : [
+            		"assets/javascripts/modernizr.custom.js",
+            		"assets/javascripts/jquery.imagesloaded.min.js",
+                "assets/javascripts/slide-show.js",
+                "assets/javascripts/application.js",
+            ],
+            dest : "_site/assets/javascripts/app.js"
+        }
+    },
+
 		uglify: {
 		    dist: {
 		    	options: {
 			      mangle: false
 			    },
-		      	files: {
-		        	"_site/assets/javascripts/app.min.js":
-		        		["assets/javascritps/modernizr.custom.js",
-			    	  	 "assets/javascripts/jquery.imagesloaded.min.js",
-			    	  	 "assets/javascripts/slide-show.js",
-			    	  	 "assets/javascripts/application.js"]
+		      files: {
+		        		"_site/assets/javascripts/app.min.js":
+		        		["_site/assets/javascripts/app.js"]
 		      }
 		    }
 		},
@@ -68,26 +78,26 @@ module.exports = function(grunt) {
 
 
   		copy: {
-			main: {
-				files: [
-					{
-						expand: true,
-			            src: ["**/*.jpg"],
-			            cwd: "assets/images/temp/",
-			            dest: ["assets/images/small/"],
-			            rename: function(dest, src) {
-			              return dest + src.replace("-small", "");
-			            }
-					},{
-						expand: true,
-			            src: ["**/*.jpg"],
-			            cwd: "assets/images/temp/",
-			            dest: ["_site/assets/images/small/"],
-			            rename: function(dest, src) {
-			              return dest + src.replace("-small", "");
-			            }
-					}
-				]
+				main: {
+					files: [
+						{
+							expand: true,
+				            src: ["**/*.jpg"],
+				            cwd: "assets/images/temp/",
+				            dest: ["assets/images/small/"],
+				            rename: function(dest, src) {
+				              return dest + src.replace("-small", "");
+				            }
+						},{
+							expand: true,
+				            src: ["**/*.jpg"],
+				            cwd: "assets/images/temp/",
+				            dest: ["_site/assets/images/small/"],
+				            rename: function(dest, src) {
+				              return dest + src.replace("-small", "");
+				            }
+						}
+					]
 		    }
 
 		},
@@ -99,7 +109,7 @@ module.exports = function(grunt) {
 
 		exec: {
 		  build: {
-		    cmd: "export JEKYLL_ENV=production jekyll build"
+		    cmd: "export JEKYLL_ENV=production; jekyll build"
 		  },
 		  serve: {
 		    cmd: "jekyll serve --watch"
@@ -112,8 +122,8 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask("default",["clean:css_js", "cssmin", "uglify", "images", "copy"]);
+	grunt.registerTask("default",["clean:css_js", "cssmin", "concat:js", "uglify", "images", "copy"]);
 	grunt.registerTask("images", ["imagemin", "responsive_images", "copy", "clean:images"]);
-	grunt.registerTask("deploy", ["default", "exec:deploy"]);
+	grunt.registerTask("deploy", ["exec:build","default", "exec:deploy"]);
 
 };

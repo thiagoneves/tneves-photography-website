@@ -19,6 +19,7 @@ exclude:
   - package.json
   - s3_website.yml
   - README.md
+  - s3_website.yml
 
 markdown: kramdown
 permalink: pretty
