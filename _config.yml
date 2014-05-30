@@ -18,7 +18,7 @@ exclude:
   - Gruntfile.js
   - package.json
   - README.md
-  - deploy.yml
+  - s3_website.yml
 
 markdown: kramdown
 permalink: pretty
